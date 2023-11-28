@@ -10,3 +10,18 @@ export const userLoginService = ({ username, password }) =>
 
 // 获取用户基本信息
 export const userGetInfoService = () => request.get('/my/userinfo')
+
+// 修改用户信息
+export const userUpdateInfoService = (data) => {
+  request.put('/my/userinfo', data)
+}
+
+// 更新用户头像 提交的数据是base64格式
+export const userUpdateAvatarService = (avatar) => {
+  request.patch('/my/update/avatar', { avatar })
+}
+
+// 更新用户密码
+export const userUpdatePasswordService = ({ old_pwd, new_pwd, re_pwd }) => {
+  request.patch('/my/updatepwd', { old_pwd, new_pwd, re_pwd })
+}
